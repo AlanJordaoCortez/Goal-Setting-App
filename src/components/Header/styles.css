@@ -1,0 +1,16 @@
+header {
+    background-color: rgb(6, 94, 129);
+    margin-top: 0px;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+h2 {
+    margin: 0;
+    color: azure;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
