@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;500&display=swap');
 
+.todo h2 {
+    color: black;
+}
+
 .todo-list {
     width: 35%;
     margin: auto;
