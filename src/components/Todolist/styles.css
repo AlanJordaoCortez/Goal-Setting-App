@@ -39,7 +39,34 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+.todo .schedule {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    
+}
 
+.goals-list, .events-list {
+    width: 35%;
+    background-color: #ecedf7;
+    border-radius: 5%;
+    padding-top: 0.75rem;
+}
 
+.goals-list h2, .events-list h2 {
+    color: #080775;
+}
+
+.goals-list ul, .events-list ul {
+    padding-left: 0;
+}
+.goals-list ul li, .events-list ul li {
+    list-style-type: none;
+    float: left;
+    margin: 0 1rem 1rem; /*Top: 0 left and right: 1 rem and bottom: 1rem */
+    font-size: 1.1rem;
+}
 
 

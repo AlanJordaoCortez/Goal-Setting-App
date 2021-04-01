@@ -24,8 +24,9 @@ class TodoList extends React.Component {
     }
 
     //checks if input is valid before creating goal/event
-    validInput = () =>  {
-        if(this.state.goal.length >= 5) {
+    validInput = userInput =>  {
+        console.log('input: ' + userInput);
+        if(userInput.length >= 5) {
             return true;
         } else {
             return false;
@@ -45,8 +46,8 @@ class TodoList extends React.Component {
     }
 
     createEvent = e => {
+        this.setState({eventAdded: this.validInput(this.state.event)}); //this set state based on the returned value of valid input
         e.preventDefault();
-        alert(this.state.event);
     }
 
     //MyGoals component
@@ -54,10 +55,37 @@ class TodoList extends React.Component {
         let goalAdded = props.goalAdded;
         let newGoal = props.goal;
         if(goalAdded) {
-            return <h2>Goal Added: {newGoal}</h2>
+            return(
+                <div className="goals-list">
+                    <h2>My Goals</h2>
+                    <ul>
+                        <li>{newGoal}</li>
+                    </ul>
+
+                </div>       
+            );
         } else {
-            return <h2>Goal not Added</h2>
+            return null;
         }
+    }
+
+    //MyEvents Component
+    myEvents(props) {
+        let eventAdded = props.eventAdded;
+        let newEvent = props.event;
+        if(eventAdded) {
+            return(
+                <div className="events-list">
+                    <h2>My Events</h2>
+                    <ul>
+                        <li>{newEvent}</li>
+                    </ul>
+
+                </div>
+            );
+        } else {
+            return null;
+        } 
     }
 
     render() {
@@ -74,7 +102,12 @@ class TodoList extends React.Component {
                         <button id="add-event" onClick={this.createEvent}>Add!</button>
                     </form>
                 </div>
-                <this.myGoals goalAdded={this.state.goalAdded} goal={this.state.goal}/>
+                <div className="schedule">
+
+                    < this.myGoals goalAdded={this.state.goalAdded} goal={this.state.goal}/>
+                    < this.myEvents  eventAdded={this.state.eventAdded} event={this.state.event}/>
+
+                </div>
             </div>
         );
     };
